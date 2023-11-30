@@ -6,7 +6,7 @@
 /*   By: motroian <motroian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 17:26:15 by motroian          #+#    #+#             */
-/*   Updated: 2023/11/17 21:31:30 by motroian         ###   ########.fr       */
+/*   Updated: 2023/11/23 19:19:28 by motroian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,10 @@
 
 Contact::Contact()
 {
-	// std::cout << "Contact constructor called" << std::endl;
 }
 
 Contact::~Contact()
 {
-	// std::cout << "Contact destructor called" << std::endl;
 }
 
 std::string checklen(std::string str)

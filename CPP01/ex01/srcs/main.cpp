@@ -6,7 +6,7 @@
 /*   By: motroian <motroian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 21:14:44 by motroian          #+#    #+#             */
-/*   Updated: 2023/11/20 21:34:18 by motroian         ###   ########.fr       */
+/*   Updated: 2023/11/28 18:13:27 by motroian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 
 int main()
 {
-	Zombie *mouss = zombieHorde(5, "asd");
+	Zombie *mouss = zombieHorde(-1, "asd");
+	if (!mouss)
+		return (1);
 	for (int i = 0; i <= 4;i++)
 		mouss[i].announce();
 	(void)mouss;

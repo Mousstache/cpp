@@ -38,9 +38,6 @@ class HumanB{
 		std::string getName(){
 			return (this->_name);
 		};
-		// Weapon getWeapon(){
-		// 	// return (_weapon);
-		// };
 };
 
 

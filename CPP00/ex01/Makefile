@@ -1,26 +1,34 @@
-NAME			=	PhoneBook
+NAME 		= PhoneBook
 
-SRCS			=	PhoneBook.cpp \
-					Contact.cpp \
-					main.cpp 
+SRC_FILES	=	$(addprefix srcs/, Contact.cpp PhoneBook.cpp) \
+				main.cpp \
 
-OBJS			=	${SRCS:.c=.o}
+OBJS_DIR	= .objets
 
-CC				=	c++ -std=c++98
+OBJS		= $(SRC_FILES:%.cpp=$(OBJS_DIR)/%.o)
 
-CFLAGS			=	-Wall -Werror -Wextra -g3 
+CC			= c++
 
-all				:	${NAME}
+CFLAGS		= -g3 -std=c++98 -Wall -Wextra -Werror -Iincludes
 
-$(NAME): $(OBJS)
-	${CC} $(OBJS) -o $(NAME)
+all : $(NAME)
 
-clean			:
-					rm -rf *.o
+$(NAME) : $(OBJS_DIR) $(OBJS)
+	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+	
+$(OBJS_DIR) :
+	@mkdir $(OBJS_DIR)
+	@mkdir $(OBJS_DIR)/srcs
 
-fclean			:	clean
-					rm -rf ${NAME}
+$(OBJS) : $(OBJS_DIR)/%.o : %.cpp
+	$(CC) $(CFLAGS) -c $< -o $@
 
-re				:	fclean all
+clean :
+	rm -rf $(OBJS_DIR)
 
-.PHONY			:	all clean fclean re
+fclean: clean
+	rm -rf $(NAME)
+	
+re : fclean all
+
+.PHONY: all clean fclean re

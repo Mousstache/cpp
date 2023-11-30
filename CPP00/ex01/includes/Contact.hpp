@@ -6,7 +6,7 @@
 /*   By: motroian <motroian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 22:20:32 by motroian          #+#    #+#             */
-/*   Updated: 2023/11/17 21:59:48 by motroian         ###   ########.fr       */
+/*   Updated: 2023/11/23 19:37:17 by motroian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ private:
     std::string firstName;
 
 public:
-    // Constructeur
     Contact();
     ~Contact();
     void setFirstName(std::string str)

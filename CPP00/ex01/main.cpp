@@ -6,7 +6,7 @@
 /*   By: motroian <motroian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 19:42:29 by motroian          #+#    #+#             */
-/*   Updated: 2023/11/21 19:26:51 by motroian         ###   ########.fr       */
+/*   Updated: 2023/11/28 19:57:50 by motroian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,9 @@ void rename(std::string &str)
 
 int main() {
     PhoneBook phoneBook;
-	phoneBook.remplir();
 	std::string command;
 
-	std::cout << "Bienvenu sur le PhoneBook !" << std::endl;
+	std::cout << "Bienvenu sur le PhoneBook !\n" << std::endl;
     while (true) {
 		if (command == "EXIT" || std::cin.eof()) {
             break;
@@ -32,7 +31,6 @@ int main() {
 		std::cout << "Entrez une commande (ADD, SEARCH, EXIT) : ";
 		std::getline (std::cin, command);
 		rename(command);
-		std::cout << "COMMAND :" << command << std::endl;
         if (command == "ADD") {
             phoneBook.addContact();
         }
