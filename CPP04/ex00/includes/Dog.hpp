@@ -1,22 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: motroian <motroian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/29 20:15:58 by motroian          #+#    #+#             */
-/*   Updated: 2023/12/01 20:28:57 by motroian         ###   ########.fr       */
+/*   Created: 2023/12/01 21:52:22 by motroian          #+#    #+#             */
+/*   Updated: 2023/12/01 22:42:24 by motroian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
-#include "ClapTrap.hpp"
+#ifndef DOG_HPP
+#define  DOG_HPP
 
-int main ()
+# include <fstream>
+# include <iomanip>
+# include <iostream>
+# include <stdlib.h>
+# include <string>
+# include "Animal.hpp"
+
+
+class Dog : public Animal
 {
-	ScavTrap david("david"), goliath("goliath");
-	david.attack(goliath.getName());
-	goliath.takeDamage(10);
-	goliath.getInfo();
-}
+	public :
+		Dog(std::string name);
+		Dog(const Dog &rhs);
+		Dog &operator=(const Dog &rhs);
+		~Dog();
+		void makeSound();
+	protected :
+		std::string Type;
+};
+
+#endif

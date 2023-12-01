@@ -5,18 +5,22 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: motroian <motroian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/29 20:15:58 by motroian          #+#    #+#             */
-/*   Updated: 2023/12/01 20:28:57 by motroian         ###   ########.fr       */
+/*   Created: 2023/12/01 21:50:41 by motroian          #+#    #+#             */
+/*   Updated: 2023/12/01 22:43:46 by motroian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
-#include "ClapTrap.hpp"
+#include "Animal.hpp"
 
 int main ()
 {
-	ScavTrap david("david"), goliath("goliath");
-	david.attack(goliath.getName());
-	goliath.takeDamage(10);
-	goliath.getInfo();
+	const Animal* meta = new Animal();
+	const Animal* j = new Dog();
+	const Animal* i = new Cat();
+	std::cout << j->getType() << " " << std::endl;
+	std::cout << i->getType() << " " << std::endl;
+	i->makeSound(); //will output the cat sound!
+	j->makeSound();
+	meta->makeSound();
+return 0;
 }

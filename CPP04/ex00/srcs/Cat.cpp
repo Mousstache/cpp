@@ -1,22 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: motroian <motroian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/29 20:15:58 by motroian          #+#    #+#             */
-/*   Updated: 2023/12/01 20:28:57 by motroian         ###   ########.fr       */
+/*   Created: 2023/12/01 21:52:18 by motroian          #+#    #+#             */
+/*   Updated: 2023/12/01 23:06:40 by motroian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
-#include "ClapTrap.hpp"
+#include "Cat.hpp"
 
-int main ()
+Cat::Cat(std::string name)
 {
-	ScavTrap david("david"), goliath("goliath");
-	david.attack(goliath.getName());
-	goliath.takeDamage(10);
-	goliath.getInfo();
+	this->_Type = name;
+}
+Cat::Cat(const Cat &rhs)
+{
+	*this = rhs;
+}
+
+Cat &Cat::operator=(const Cat &rhs)
+{
+	(void)rhs;
+	return (*this);
+};
+
+void Cat::makeSound()
+{
+	std::cout << "meeeeow" << std::endl;
 }

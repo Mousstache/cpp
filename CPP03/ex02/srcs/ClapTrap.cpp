@@ -6,7 +6,7 @@
 /*   By: motroian <motroian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 20:14:09 by motroian          #+#    #+#             */
-/*   Updated: 2023/12/01 21:42:45 by motroian         ###   ########.fr       */
+/*   Updated: 2023/12/01 21:41:50 by motroian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ void ClapTrap::beRepaired(unsigned int amount)
 	this->_hitPoint += amount;
 	std::cout << "ClapTrap" << this->_name << "receive " << amount  << "points of life !" << std::endl;
 }
+
 bool ClapTrap::good()
 {
 	if (this->_hitPoint < 1)

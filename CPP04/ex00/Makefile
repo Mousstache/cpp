@@ -1,6 +1,6 @@
-NAME 		= ScavTrap
+NAME 		= Animal
 
-SRC_FILES	=	$(addprefix srcs/, ScavTrap.cpp ClapTrap.cpp) \
+SRC_FILES	=	$(addprefix srcs/, Cat.cpp Dog.cpp Animal.cpp) \
 				main.cpp \
 
 OBJS_DIR	= .objets

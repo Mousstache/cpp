@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: motroian <motroian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 20:13:29 by motroian          #+#    #+#             */
-/*   Updated: 2023/12/01 00:00:54 by motroian         ###   ########.fr       */
+/*   Updated: 2023/12/01 21:42:56 by motroian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 # include <string>
 
 class ClapTrap{
+	
 	public :
 		ClapTrap();
 		ClapTrap(std::string name);
@@ -30,8 +31,9 @@ class ClapTrap{
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);
 		std::string getName(){return (this->_name);};
+		bool good();
 		
-	private :
+	protected :
 		std::string 	_name;
 		unsigned int 	_hitPoint;
 		unsigned int 	_energyPoint;

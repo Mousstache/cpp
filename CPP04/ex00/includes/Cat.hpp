@@ -1,22 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: motroian <motroian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/29 20:15:58 by motroian          #+#    #+#             */
-/*   Updated: 2023/12/01 20:28:57 by motroian         ###   ########.fr       */
+/*   Created: 2023/12/01 21:51:50 by motroian          #+#    #+#             */
+/*   Updated: 2023/12/01 23:06:49 by motroian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
-#include "ClapTrap.hpp"
 
-int main ()
+#ifndef CAT_HPP
+#define  CAT_HPP
+
+# include <fstream>
+# include <iomanip>
+# include <iostream>
+# include <stdlib.h>
+# include <string>
+# include "Animal.hpp"
+
+
+class Cat : public Animal
 {
-	ScavTrap david("david"), goliath("goliath");
-	david.attack(goliath.getName());
-	goliath.takeDamage(10);
-	goliath.getInfo();
-}
+	public :
+		Cat(std::string name);
+		Cat(const Cat &rhs);
+		Cat &operator=(const Cat &rhs);
+		~Cat(){};
+		void makeSound();
+	protected :
+		std::string _Type;
+};
+
+#endif
