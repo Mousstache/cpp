@@ -1,36 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: motroian <motroian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/01 21:51:50 by motroian          #+#    #+#             */
-/*   Updated: 2023/12/04 18:14:11 by motroian         ###   ########.fr       */
+/*   Created: 2023/12/04 17:51:51 by motroian          #+#    #+#             */
+/*   Updated: 2023/12/05 21:09:53 by motroian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-#ifndef CAT_HPP
-#define  CAT_HPP
+#ifndef WRONGANIMAL_HPP
+#define  WRONGANIMAL_HPP
 
 # include <fstream>
 # include <iomanip>
 # include <iostream>
 # include <stdlib.h>
 # include <string>
-# include "Animal.hpp"
 
-
-class Cat : public Animal
+class wrongAnimal
 {
 	public :
-		Cat();
-		Cat(std::string name);
-		Cat(const Cat &rhs);
-		Cat &operator=(const Cat &rhs);
-		~Cat();
-		void makeSound()const;
+		wrongAnimal();
+		wrongAnimal(std::string name);
+		wrongAnimal(const wrongAnimal &rhs);
+		wrongAnimal &operator=(const wrongAnimal &rhs);
+		~wrongAnimal(){std::cout << "bonjour";};
+		std::string getType();
+		// void makeSound(); 
 	protected :
 		std::string _Type;
 };

@@ -1,18 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: motroian <motroian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/01 21:51:50 by motroian          #+#    #+#             */
-/*   Updated: 2023/12/04 18:14:11 by motroian         ###   ########.fr       */
+/*   Created: 2023/12/04 17:51:45 by motroian          #+#    #+#             */
+/*   Updated: 2023/12/05 23:51:18 by motroian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-#ifndef CAT_HPP
-#define  CAT_HPP
+#ifndef WRONGCAT_HPP
+#define  WRONGCAT_HPP
 
 # include <fstream>
 # include <iomanip>
@@ -20,16 +19,17 @@
 # include <stdlib.h>
 # include <string>
 # include "Animal.hpp"
+# include "WrongAnimal.hpp"
 
 
-class Cat : public Animal
+class wrongCat : public wrongAnimal
 {
 	public :
-		Cat();
-		Cat(std::string name);
-		Cat(const Cat &rhs);
-		Cat &operator=(const Cat &rhs);
-		~Cat();
+		wrongCat();
+		wrongCat(std::string name);
+		wrongCat(const wrongCat &rhs);
+		wrongCat &operator=(const wrongCat &rhs);
+		~wrongCat();
 		void makeSound()const;
 	protected :
 		std::string _Type;

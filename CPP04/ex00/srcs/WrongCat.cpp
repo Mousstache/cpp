@@ -1,51 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: motroian <motroian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/01 21:47:11 by motroian          #+#    #+#             */
-/*   Updated: 2023/12/04 19:14:41 by motroian         ###   ########.fr       */
+/*   Created: 2023/12/05 20:55:05 by motroian          #+#    #+#             */
+/*   Updated: 2023/12/05 23:50:31 by motroian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "WrongCat.hpp"
 
-Animal::Animal()
+wrongCat::wrongCat()
 {
 	this->_Type = "Default name";
-	std::cout << "Animal constructor called" << std::endl;
+	std::cout << "wrongCat constructor called" << std::endl;
 }
 
-Animal::Animal(std::string name)
+wrongCat::wrongCat(std::string name)
 {
 	this->_Type = name;
-	std::cout << "Animal constructor called" << std::endl;
+	std::cout << "wrongCat constructor called" << std::endl;
 }
-Animal::Animal(const Animal &rhs)
+wrongCat::wrongCat(const wrongCat &rhs)
 {
 	*this = rhs;
 }
 
-Animal &Animal::operator=(const Animal &rhs)
+wrongCat &wrongCat::operator=(const wrongCat &rhs)
 {
 	this->_Type = rhs._Type;
 	return (*this);
 };
 
-
-Animal::~Animal()
+void wrongCat::makeSound() const
 {
-	std::cout << "Animal destructor called" << std::endl;
+	std::cout << "wrong meeeeow" << std::endl;
 }
 
-std::string Animal::getType()const
+wrongCat::~wrongCat()
 {
-	return (this->_Type);
-}
-
-void Animal::makeSound() const
-{
-	std::cout << "rien." << std::endl;
+	std::cout << "wrongCat destructor called" << std::endl;
 }

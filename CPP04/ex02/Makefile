@@ -1,6 +1,6 @@
-NAME 		= Animal
+NAME 		= Brain
 
-SRC_FILES	=	$(addprefix srcs/, Cat.cpp Dog.cpp Animal.cpp WrongAnimal.cpp WrongCat.cpp) \
+SRC_FILES	=	$(addprefix srcs/, Cat.cpp Dog.cpp Animal.cpp WrongAnimal.cpp WrongCat.cpp Brain.cpp) \
 				main.cpp \
 
 OBJS_DIR	= .objets
