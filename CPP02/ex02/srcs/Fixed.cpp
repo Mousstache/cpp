@@ -6,21 +6,31 @@
 /*   By: motroian <motroian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 21:13:45 by motroian          #+#    #+#             */
-/*   Updated: 2023/11/30 20:57:49 by motroian         ###   ########.fr       */
+/*   Updated: 2023/12/05 20:52:45 by motroian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
 
-int Fixed::getRawBits(void) const
+Fixed::Fixed():_fixed(0)
 {
-	return (this->_fixed);
+	std::cout << "Constructor called" << std::endl;
 }
 
-void Fixed::setRawBits(int const raw)
+Fixed::~Fixed()
 {
-	this->_fixed = raw;
+	std::cout << "Destructor called" << std::endl;
+}
+
+Fixed::Fixed(const int nb)
+{
+	_fixed = nb << _stock;
+}
+
+Fixed::Fixed(const float nb)
+{
+	_fixed = roundf(nb * (float)(1 << _stock));
 }
 
 Fixed::Fixed(const Fixed &rhs)
@@ -34,6 +44,16 @@ Fixed& Fixed::operator=(const Fixed &rhs)
 		_fixed = rhs.getRawBits();
 	return (*this);
 };
+
+int Fixed::getRawBits(void) const
+{
+	return (this->_fixed);
+}
+
+void Fixed::setRawBits(int const raw)
+{
+	this->_fixed = raw;
+}
 
 float Fixed::toFloat( void ) const
 {
@@ -140,7 +160,7 @@ Fixed &Fixed::max(Fixed &a, Fixed &b)
 
 const Fixed &Fixed::min(Fixed const &a, Fixed const &b)
 {
-	if (a._fixed > b._fixed)
+	if (a._fixed < b._fixed)
 		return (a);
 	else
 		return (b);

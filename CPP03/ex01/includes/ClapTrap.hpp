@@ -6,7 +6,7 @@
 /*   By: motroian <motroian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 20:13:29 by motroian          #+#    #+#             */
-/*   Updated: 2023/12/01 21:42:56 by motroian         ###   ########.fr       */
+/*   Updated: 2023/12/06 18:28:15 by motroian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,11 @@ class ClapTrap{
 		ClapTrap(std::string name);
 		ClapTrap(const ClapTrap &rhs);
 		ClapTrap &operator= (const ClapTrap &rhs);
-		~ClapTrap(){std::cout << "destructor called" << std::endl;};
+		~ClapTrap();
 		void attack(const std::string& target);
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);
-		std::string getName(){return (this->_name);};
-		bool good();
+		std::string getName();
 		
 	protected :
 		std::string 	_name;

@@ -6,21 +6,31 @@
 /*   By: motroian <motroian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 21:13:45 by motroian          #+#    #+#             */
-/*   Updated: 2023/11/29 22:37:07 by motroian         ###   ########.fr       */
+/*   Updated: 2023/12/05 18:41:23 by motroian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
 
-int Fixed::getRawBits(void) const
+Fixed::Fixed() : _fixed(0)
 {
-	return (this->_fixed);
+	std::cout << "Constructor called" << std::endl;
 }
 
-void Fixed::setRawBits(int const raw)
+Fixed::~Fixed()
 {
-	this->_fixed = raw;
+	std::cout << "Destructor called" << std::endl;
+}
+
+Fixed::Fixed(const int nb)
+{
+	_fixed = nb << _stock;
+}
+
+Fixed::Fixed(const float nb)
+{
+	_fixed = roundf(nb * (float)(1 << _stock));
 }
 
 Fixed::Fixed(const Fixed &rhs)
@@ -52,4 +62,14 @@ int Fixed::toInt( void ) const
 std::ostream& operator<<(std::ostream& os, const Fixed& fixe) {
     os << fixe.toFloat();
     return os;
+}
+
+int Fixed::getRawBits(void) const
+{
+	return (this->_fixed);
+}
+
+void Fixed::setRawBits(int const raw)
+{
+	this->_fixed = raw;
 }

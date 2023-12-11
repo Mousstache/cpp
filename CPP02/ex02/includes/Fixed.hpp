@@ -6,7 +6,7 @@
 /*   By: motroian <motroian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 18:21:32 by motroian          #+#    #+#             */
-/*   Updated: 2023/11/30 20:57:57 by motroian         ###   ########.fr       */
+/*   Updated: 2023/12/05 18:49:01 by motroian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,12 @@
 
 class Fixed{
 	public :
-		Fixed():_fixed(0){};
-		Fixed(const int nb){_fixed = nb << _stock;};
-		Fixed(const float nb){_fixed = roundf(nb * (float)(1 << _stock));};
+		Fixed();
+		Fixed(const int nb);
+		Fixed(const float nb);
 		Fixed(const Fixed &rhs);
 		Fixed &operator= (const Fixed &rhs);
-		~Fixed(){};
+		~Fixed();
 		
 		float toFloat( void ) const;
 		int toInt( void ) const;

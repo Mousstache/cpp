@@ -6,11 +6,21 @@
 /*   By: motroian <motroian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 22:08:27 by motroian          #+#    #+#             */
-/*   Updated: 2023/11/21 21:28:45 by motroian         ###   ########.fr       */
+/*   Updated: 2023/12/04 17:17:50 by motroian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanB.hpp"
+
+HumanB::HumanB(std::string name): _name(name), _weapon(NULL)
+{
+	std::cout << "Je suis " << name << std::endl;
+}
+
+HumanB::~HumanB()
+{
+	std::cout << "Destructor called" << std::endl;
+}
 
 void HumanB::attack()
 {

@@ -1,7 +1,7 @@
-NAME 		= replace
+NAME 		= Bureaucrat
 
-SRC_FILES	=	$(addprefix srcs/, Replace.cpp) \
-				main.cpp
+SRC_FILES	=	$(addprefix srcs/, ClapTrap.cpp) \
+				main.cpp \
 
 OBJS_DIR	= .objets
 
@@ -18,8 +18,6 @@ $(NAME) : $(OBJS_DIR) $(OBJS)
 	
 $(OBJS_DIR) :
 	@mkdir $(OBJS_DIR)
-	@mkdir $(OBJS_DIR)/classes
-	@mkdir $(OBJS_DIR)/classes/Zombie
 	@mkdir $(OBJS_DIR)/srcs
 
 $(OBJS) : $(OBJS_DIR)/%.o : %.cpp

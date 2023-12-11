@@ -6,7 +6,7 @@
 /*   By: motroian <motroian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 22:09:14 by motroian          #+#    #+#             */
-/*   Updated: 2023/11/21 19:42:01 by motroian         ###   ########.fr       */
+/*   Updated: 2023/12/04 17:11:38 by motroian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,8 @@ class HumanA{
 		std::string _name;
 		Weapon _weapon;	
 	public :
-		HumanA(std::string name, Weapon arme): _name(name), _weapon(arme) {
-			std::cout << "Je suis " << name << std::endl;
-		};
-		~HumanA(){}
+		HumanA(std::string name, Weapon arme);
+		~HumanA();
 		void attack();
 		void setName(std::string str){
 			this->_name = str;

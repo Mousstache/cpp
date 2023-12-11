@@ -6,7 +6,7 @@
 /*   By: motroian <motroian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 00:02:15 by motroian          #+#    #+#             */
-/*   Updated: 2023/12/01 20:31:21 by motroian         ###   ########.fr       */
+/*   Updated: 2023/12/06 18:27:54 by motroian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,8 @@ class ScavTrap : public ClapTrap
 		ScavTrap(std::string name);
 		ScavTrap(const ScavTrap &rhs);
 		ScavTrap &operator= (const ScavTrap &rhs);
-		~ScavTrap(){std::cout << "destructor called" << std::endl;};
+		~ScavTrap();
 		void guardGate();
-		void getInfo();
 		void attack(const std::string& target);
 };
 

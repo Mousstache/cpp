@@ -1,6 +1,6 @@
 NAME 		= Zombie
 
-SRC_FILES	=	$(addprefix srcs/, Zombie.cpp main.cpp zombieHorde.cpp) \
+SRC_FILES	=	$(addprefix srcs/, Zombie.cpp zombieHorde.cpp main.cpp) \
 
 OBJS_DIR	= .objets
 
@@ -17,8 +17,6 @@ $(NAME) : $(OBJS_DIR) $(OBJS)
 	
 $(OBJS_DIR) :
 	@mkdir $(OBJS_DIR)
-	@mkdir $(OBJS_DIR)/classes
-	@mkdir $(OBJS_DIR)/classes/Zombie
 	@mkdir $(OBJS_DIR)/srcs
 
 $(OBJS) : $(OBJS_DIR)/%.o : %.cpp

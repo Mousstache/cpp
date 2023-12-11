@@ -6,20 +6,20 @@
 /*   By: motroian <motroian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 18:20:38 by motroian          #+#    #+#             */
-/*   Updated: 2023/11/29 18:46:30 by motroian         ###   ########.fr       */
+/*   Updated: 2023/12/05 18:35:25 by motroian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-int Fixed::getRawBits(void) const
+Fixed::Fixed() : _fixed(0)
 {
-	return (this->_fixed);
+	std::cout << "Constructor called" << std::endl;
 }
 
-void Fixed::setRawBits(int const raw)
+Fixed::~Fixed()
 {
-	this->_fixed = raw;
+	std::cout << "Destructor called" << std::endl;
 }
 
 Fixed::Fixed(const Fixed &rhs)
@@ -32,4 +32,14 @@ Fixed& Fixed::operator=(const Fixed &rhs)
 	if (this != &rhs)
 		_fixed = rhs.getRawBits();
 	return (*this);
-};
+}
+
+int Fixed::getRawBits(void) const
+{
+	return (this->_fixed);
+}
+
+void Fixed::setRawBits(int const raw)
+{
+	this->_fixed = raw;
+}

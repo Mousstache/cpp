@@ -26,10 +26,8 @@ class HumanB{
 		std::string _name;
 		Weapon *_weapon;	
 	public :
-		HumanB(std::string name): _name(name), _weapon(NULL){
-			std::cout << "Je suis " << name << std::endl;
-		};
-		~HumanB(){};
+		HumanB(std::string name);
+		~HumanB();
 		void attack();
 		void setName(std::string str){
 			this->_name = str;

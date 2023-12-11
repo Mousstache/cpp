@@ -6,7 +6,7 @@
 /*   By: motroian <motroian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 20:15:58 by motroian          #+#    #+#             */
-/*   Updated: 2023/11/30 23:31:14 by motroian         ###   ########.fr       */
+/*   Updated: 2023/12/06 18:17:31 by motroian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 
 int main ()
 {
-	ClapTrap david, goliath;
+	ClapTrap david("david"), goliath("goliath");
 	david.attack(goliath.getName());
+	goliath.takeDamage(10);
+	david.attack(goliath.getName());
+	goliath.takeDamage(10);
 }

@@ -6,7 +6,7 @@
 /*   By: motroian <motroian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 19:10:05 by motroian          #+#    #+#             */
-/*   Updated: 2023/11/20 18:45:39 by motroian         ###   ########.fr       */
+/*   Updated: 2023/12/04 16:56:06 by motroian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@
 
 class Zombie{
 	public :
-		Zombie(){};
-		~Zombie(){};
+		Zombie();
+		~Zombie();
 		void announce();
 		std::string getName()
 		{

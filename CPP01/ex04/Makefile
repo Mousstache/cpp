@@ -18,8 +18,6 @@ $(NAME) : $(OBJS_DIR) $(OBJS)
 	
 $(OBJS_DIR) :
 	@mkdir $(OBJS_DIR)
-	@mkdir $(OBJS_DIR)/classes
-	@mkdir $(OBJS_DIR)/classes/Zombie
 	@mkdir $(OBJS_DIR)/srcs
 
 $(OBJS) : $(OBJS_DIR)/%.o : %.cpp
