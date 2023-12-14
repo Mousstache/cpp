@@ -6,7 +6,7 @@
 /*   By: motroian <motroian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 19:27:49 by motroian          #+#    #+#             */
-/*   Updated: 2023/12/11 19:29:29 by motroian         ###   ########.fr       */
+/*   Updated: 2023/12/14 23:01:00 by motroian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,9 @@
 # include <stdlib.h>
 # include <string>
 # include "AMateria.hpp"
+
+
+class AMateria;
 
 class ICharacter
 {

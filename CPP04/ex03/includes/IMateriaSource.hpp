@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   IMateriasource.hpp                                 :+:      :+:    :+:   */
+/*   IMateriaSource.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: motroian <motroian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 19:24:31 by motroian          #+#    #+#             */
-/*   Updated: 2023/12/11 19:27:32 by motroian         ###   ########.fr       */
+/*   Updated: 2023/12/14 22:50:56 by motroian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,20 +19,16 @@
 # include <stdlib.h>
 # include <string>
 #include "ICharacter.hpp"
+#include "AMateria.hpp"
 
-class IMateria
+class IMateriaSource
 {
-	public :
-		IMateria();
-		IMateria(std::string name);
-		IMateria(const IMateria &rhs);
-		IMateria &operator=(const IMateria &rhs);
-		virtual ~IMateria();
-		std::string getType()const;
-		virtual void makeSound()const = 0;
-		virtual IMateria* clone() const = 0;
-		virtual void use(ICharacter& target);
+	public:
+		virtual ~IMateriaSource() {};
+		virtual void learnMateria(AMateria*) = 0;
+		virtual AMateria* createMateria(std::string const & type) = 0;
 	protected :
+		AMateria* _materias[4];
 		std::string _Type;
 };
 

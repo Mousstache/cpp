@@ -6,7 +6,7 @@
 /*   By: motroian <motroian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 22:11:21 by motroian          #+#    #+#             */
-/*   Updated: 2023/12/11 18:25:28 by motroian         ###   ########.fr       */
+/*   Updated: 2023/12/12 20:58:47 by motroian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,18 @@
 # include <iostream>
 # include <stdlib.h>
 # include <string>
+# include "AMateria.hpp"
 
-class Cure
+class Cure : public AMateria
 {
 	public :
 		Cure();
 		Cure(std::string name);
 		Cure(const Cure &rhs);
 		Cure &operator=(const Cure &rhs);
-		virtual ~Cure();
-		std::string getType()const;
-		virtual void clone()const; 
+		~Cure();
+		void use(ICharacter& target);
+		AMateria* clone()const; 
 	protected :
 		std::string _Type;
 };

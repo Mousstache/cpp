@@ -1,18 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: motroian <motroian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 22:03:58 by motroian          #+#    #+#             */
-/*   Updated: 2023/12/11 19:01:25 by motroian         ###   ########.fr       */
+/*   Updated: 2023/12/14 23:31:31 by motroian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "IMateria.hpp"
+#include "IMateriaSource.hpp"
+#include "MateriaSource.hpp"
 #include "AMateria.hpp"
 #include "Character.hpp"
+#include "ICharacter.hpp"
 #include "Ice.hpp"
 #include "Cure.hpp"
 

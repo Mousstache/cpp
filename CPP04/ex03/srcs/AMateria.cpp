@@ -6,22 +6,19 @@
 /*   By: motroian <motroian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 22:12:00 by motroian          #+#    #+#             */
-/*   Updated: 2023/12/11 23:53:32 by motroian         ###   ########.fr       */
+/*   Updated: 2023/12/14 23:57:44 by motroian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AMeteria.hpp"
+#include "AMateria.hpp"
 
 AMateria::AMateria()
 {
-	this->_Type = "default";
 	std::cout << "AMateria Constructor called" << std::endl;
 }
 
-AMateria::AMateria(std::string name) : Animal(name)
+AMateria::AMateria(std::string const &type ) : _Type(type)
 {
-	(void)name;
-	this->_Type = "default";
 	std::cout << "AMateria Constructor called" << std::endl;
 }
 
@@ -41,12 +38,12 @@ AMateria::~AMateria()
 	std::cout << "AMateria destructor called" << std::endl;
 }
 
-std::string const & getType()const
+void AMateria::use(ICharacter& target)
 {
-	return (this->_Type);
+	std::cout << "AMateria :: use called but action toward " << target.getName() << " is not defined\n";
 }
 
-void AMateria::clone() const
+std::string const &AMateria::getType()const
 {
-	return (*this);
+	return (this->_Type);
 }

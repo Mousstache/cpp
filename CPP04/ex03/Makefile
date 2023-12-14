@@ -1,6 +1,6 @@
-NAME 		= Brain
+NAME 		= Materia
 
-SRC_FILES	=	$(addprefix srcs/, Cat.cpp Dog.cpp Animal.cpp WrongAnimal.cpp WrongCat.cpp Brain.cpp) \
+SRC_FILES	=	$(addprefix srcs/, AMateria.cpp Character.cpp Ice.cpp Cure.cpp MateriaSource.cpp) \
 				main.cpp \
 
 OBJS_DIR	= .objets

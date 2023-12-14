@@ -6,7 +6,7 @@
 /*   By: motroian <motroian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 19:09:05 by motroian          #+#    #+#             */
-/*   Updated: 2023/12/11 19:11:48 by motroian         ###   ########.fr       */
+/*   Updated: 2023/12/14 23:48:30 by motroian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,29 @@
 # include <stdlib.h>
 # include <string>
 #include "AMateria.hpp"
+#include "IMateriaSource.hpp"
 
-class IMateriaSource
+
+class MateriaSource : public IMateriaSource
 {
-	public:
-		virtual ~IMateriaSource() {};
-		virtual void learnMateria(AMateria*) = 0;
-		virtual AMateria* createMateria(std::string const & type) = 0;
+	public :
+		MateriaSource();
+		MateriaSource(std::string name);
+		MateriaSource(const MateriaSource &rhs);
+		MateriaSource &operator=(const MateriaSource &rhs);
+		virtual ~MateriaSource();
+		std::string getType()const;
+		MateriaSource* clone() const;
+		void use(ICharacter& target);
+		void learnMateria(AMateria* materia);
+		AMateria *createMateria(std::string const &type);
+
 	protected :
+		AMateria* _materias[4];
+		int _nbMateria;
 		std::string _Type;
+		std::string _name;
 };
+
 
 #endif
