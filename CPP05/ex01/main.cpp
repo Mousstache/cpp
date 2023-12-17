@@ -5,32 +5,28 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: motroian <motroian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/01 21:50:41 by motroian          #+#    #+#             */
-/*   Updated: 2023/12/17 05:38:54 by motroian         ###   ########.fr       */
+/*   Created: 2023/12/17 02:13:34 by motroian          #+#    #+#             */
+/*   Updated: 2023/12/17 03:18:47 by motroian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
-#include "WrongAnimal.hpp"
-#include "WrongCat.hpp"
-#include "Cat.hpp"
-#include "Dog.hpp"
+#include "Form.hpp"
+#include "Bureaucrat.hpp"
 
 int main ()
 {
-	const wrongAnimal* meta = new wrongAnimal();
-	const Animal* j = new Dog();
-	//const Animal* h = new Cat();
-	const wrongAnimal* i = new wrongCat();
-	std::cout << j->getType() << std::endl;
-	std::cout << i->getType() << std::endl;
-	i->makeSound();
-	j->makeSound();
-	// h->makeSound();
-	meta->makeSound();
-	delete j;
-	delete meta;
-	delete i;
-	// delete h;
-	return 0;
+	Bureaucrat tpassin("tpassin", 2);
+	std::cout << tpassin;
+	Bureaucrat mouss("moussa", 150);
+	std::cout << mouss;
+	Form form("form", 145, 34);
+	try
+	{
+		form.beSigned(mouss);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+	
 }

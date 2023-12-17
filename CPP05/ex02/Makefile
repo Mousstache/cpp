@@ -1,4 +1,4 @@
-NAME 		= Bureaucrat
+NAME 		= Form
 
 SRC_FILES	=	$(addprefix srcs/, Bureaucrat.cpp) \
 				main.cpp \

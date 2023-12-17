@@ -6,7 +6,7 @@
 /*   By: motroian <motroian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 23:38:57 by motroian          #+#    #+#             */
-/*   Updated: 2023/12/16 22:02:24 by motroian         ###   ########.fr       */
+/*   Updated: 2023/12/16 23:21:21 by motroian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,10 @@
 # include <iostream>
 # include <stdlib.h>
 # include <string>
-#include <exception> 
+# include <exception> 
+# include "Form.hpp"
 
+class Form;
 
 class Bureaucrat
 {
@@ -33,6 +35,7 @@ class Bureaucrat
 		const std::string getName()const;
 		void gradePlus();
 		void gradeLess();
+		void signForm(Form &form);
 		class GradeTooLowException: public std::exception
 		{
 			public :

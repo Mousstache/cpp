@@ -1,38 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
+/*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: motroian <motroian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/11 23:38:57 by motroian          #+#    #+#             */
-/*   Updated: 2023/12/16 22:02:24 by motroian         ###   ########.fr       */
+/*   Created: 2023/12/16 23:32:01 by motroian          #+#    #+#             */
+/*   Updated: 2023/12/16 23:34:22 by motroian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BUREAUCRAT_HPP
-# define BUREAUCRAT_HPP
+#ifndef PRESIDENTIALFORM_HPP
+# define PRESIDENTIALFORM_HPP
 
 # include <fstream>
 # include <iomanip>
 # include <iostream>
 # include <stdlib.h>
 # include <string>
-#include <exception> 
+# include <exception> 
+# include "Bureaucrat.hpp"
 
+class Bureaucrat;
 
-class Bureaucrat
+class Presidential
 {
 	public :
-		Bureaucrat();
-		Bureaucrat(std::string name, int grade);
-		Bureaucrat(const Bureaucrat &rhs);
-		Bureaucrat &operator=(const Bureaucrat &rhs);
-		~Bureaucrat();
-		int getGrade()const;
+		Presidential();
+		Presidential(std::string name, int grade);
+		Presidential(const Presidential &rhs);
+		Presidential &operator=(const Presidential &rhs);
+		~Presidential();
+		int getGradeSign()const;
+		int getGradeEx()const;
+		bool getSigned()const;
 		const std::string getName()const;
-		void gradePlus();
-		void gradeLess();
+		void beSigned(Bureaucrat& bureaucrat);
 		class GradeTooLowException: public std::exception
 		{
 			public :
@@ -44,10 +47,12 @@ class Bureaucrat
 				virtual const char* what() const throw();
 		};
 	private :
-		const std::string  _name;
-		int				_grade;
+		const std::string	_name;
+		bool				_signed;
+		const int			_gradeSign;
+		const int			_gradeEx;
 };
 
-std::ostream& operator<<(std::ostream& os, const Bureaucrat& bureaucrat);
+std::ostream& operator<<(std::ostream& os, const Form& form);
 
 #endif

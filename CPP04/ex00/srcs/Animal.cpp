@@ -6,7 +6,7 @@
 /*   By: motroian <motroian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 21:47:11 by motroian          #+#    #+#             */
-/*   Updated: 2023/12/04 19:14:41 by motroian         ###   ########.fr       */
+/*   Updated: 2023/12/17 05:42:02 by motroian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,8 @@ Animal::Animal(const Animal &rhs)
 
 Animal &Animal::operator=(const Animal &rhs)
 {
-	this->_Type = rhs._Type;
+	if (this != &rhs)
+		this->_Type = rhs._Type;
 	return (*this);
 };
 
@@ -47,5 +48,5 @@ std::string Animal::getType()const
 
 void Animal::makeSound() const
 {
-	std::cout << "rien." << std::endl;
+	std::cout << " ** MAKE SOUND ** !" << std::endl;
 }
