@@ -1,6 +1,6 @@
-NAME 		= SpecialForm
+NAME 		= Intern
 
-SRC_FILES	=	$(addprefix srcs/, Bureaucrat.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp  ShrubberyCreationForm.cpp AForm.cpp) \
+SRC_FILES	=	$(addprefix srcs/,Intern.cpp Bureaucrat.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp  ShrubberyCreationForm.cpp AForm.cpp) \
 				main.cpp \
 
 OBJS_DIR	= .objets
