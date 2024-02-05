@@ -6,11 +6,11 @@
 /*   By: motroian <motroian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 22:12:31 by motroian          #+#    #+#             */
-/*   Updated: 2023/12/14 23:19:34 by motroian         ###   ########.fr       */
+/*   Updated: 2024/01/19 18:26:30 by motroian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Character.hpp"
+#include "../includes/Character.hpp"
 
 Character::Character()
 {
@@ -49,50 +49,45 @@ Character &Character::operator=(const Character &rhs)
 Character::~Character()
 {
 	std::cout << "Character destructor called" << std::endl;
+	for (int i = 0; i < 4;i++)
+	{
+		if (this->_item[i])
+			delete this->_item[i];
+	}
 }
 
 void Character::equip(AMateria* m)
 {
-	int i = -1;
-
-	for (int i= 0;i < 4;++i)
+	if (m)
 	{
-		if (this->_item[i] != NULL)
-			break ;
+		for (int i = 0; i < 4; i++)
+			if (!this->_item[i])
+			{
+				if (this->_item[i] != m)
+					this->_item[i] = m;
+				return;
+			}
 	}
-	if (i == 3)
-	{
-		std::cout << "FUll !" << std::endl;
+	else
 		delete m;
-		return ;
-	}
-	i = -1;
-	while (++i < 4)
-	{
-		if (this->_item[i] == NULL)
-			this->_item[i] = m;
-	}
+	return;
 }
 
 void Character::unequip(int idx)
 {
-	if (idx < 0 || idx > 4)
+	if (idx >= 0 && idx < 4)
 	{
-		std::cout << "Index pas bon" << std::endl;
-		return ;
+		delete (this->_item[idx]);
+		this->_item[idx] = NULL;
 	}
-	this->_item[idx] = NULL;
 }
 
 void Character::use(int idx, ICharacter& target)
 {
-	if (idx < 0 || idx > 4 || _item[idx] == NULL)
+	if (idx >= 0 && idx <= 4 && this->_item[idx])
 	{
-		// std::cout << "Index pas bon" << std::endl;
-		return ;
+		this->_item[idx]->use(target);
 	}
-	if (this->_item[idx])
-		_item[idx]->use(target);
 }
 
 std::string const &Character::getName() const

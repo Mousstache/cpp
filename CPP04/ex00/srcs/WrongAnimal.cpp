@@ -6,46 +6,41 @@
 /*   By: motroian <motroian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 20:54:51 by motroian          #+#    #+#             */
-/*   Updated: 2023/12/05 23:55:33 by motroian         ###   ########.fr       */
+/*   Updated: 2024/01/18 21:44:10 by motroian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "WrongAnimal.hpp"
+#include "../includes/WrongAnimal.hpp"
 
-wrongAnimal::wrongAnimal()
+WrongAnimal::WrongAnimal() : _type("WrongAnimal")
 {
-	this->_Type = "Default type";
-	std::cout << "wrongAnimal constructor called" << std::endl;
+	std::cout << "WrongAnimal constructor called" << std::endl;
 }
 
-wrongAnimal::wrongAnimal(std::string name)
-{
-	this->_Type = name;
-	std::cout << "wrongAnimal constructor called" << std::endl;
-}
-wrongAnimal::wrongAnimal(const wrongAnimal &rhs)
+WrongAnimal::WrongAnimal(const WrongAnimal &rhs)
 {
 	*this = rhs;
 }
 
-wrongAnimal &wrongAnimal::operator=(const wrongAnimal &rhs)
+WrongAnimal &WrongAnimal::operator=(const WrongAnimal &rhs)
 {
-	this->_Type = rhs._Type;
+	if (this != &rhs)
+		this->_type = rhs._type;
 	return (*this);
 };
 
 
-wrongAnimal::~wrongAnimal()
+WrongAnimal::~WrongAnimal()
 {
-	std::cout << "wrongAnimal destructor called" << std::endl;
+	std::cout << "WrongAnimal destructor called" << std::endl;
 }
 
-std::string wrongAnimal::getType()const
+std::string WrongAnimal::getType()const
 {
-	return (this->_Type);
+	return (this->_type);
 }
 
-void wrongAnimal::makeSound() const
+void WrongAnimal::makeSound() const
 {
 	std::cout << "wrong noise" << std::endl;
 }

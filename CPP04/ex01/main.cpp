@@ -6,7 +6,7 @@
 /*   By: motroian <motroian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 21:50:41 by motroian          #+#    #+#             */
-/*   Updated: 2023/12/08 21:12:38 by motroian         ###   ########.fr       */
+/*   Updated: 2024/01/19 16:56:58 by motroian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,12 @@ int main ()
 			animal[i] = new Cat;
 	}
 	for (int i = 0; i < 10; i++)
-		delete animal[i]; 
+		delete animal[i];
+	std::cout << std::endl;
+	Animal* cat = new Cat();
+	Animal* gatito;
+	gatito = cat;
+	delete gatito;
 	return (0);
 	// Animal* meta = new Animal();
 	// Animal *j = new Dog();

@@ -6,7 +6,7 @@
 /*   By: motroian <motroian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 23:38:54 by motroian          #+#    #+#             */
-/*   Updated: 2023/12/16 23:17:50 by motroian         ###   ########.fr       */
+/*   Updated: 2024/01/22 16:53:57 by motroian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,7 @@ const char* Bureaucrat::GradeTooLowException:: what() const throw()
 {
 	return "Grade too low";
 }
+
 void Bureaucrat::signForm(Form &form)
 {
 	if (form.getSigned())

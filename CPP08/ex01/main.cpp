@@ -6,33 +6,33 @@
 /*   By: motroian <motroian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/26 22:15:42 by motroian          #+#    #+#             */
-/*   Updated: 2023/12/26 22:15:45 by motroian         ###   ########.fr       */
+/*   Updated: 2024/01/02 19:36:25 by motroian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
-#include "./includes/Colors.hpp"
-#include <cstdlib>
-#include <vector>
+# include <cstdlib>
+# include <vector>
 # include <iostream>
 # include <vector>
 # include <algorithm>
+# include "Span.hpp"
 
 
-// int	main(void)
-// {
-// 	Span	sp;
+int	main(void)
+{
+	Span	sp;
 
-// 	sp = Span(5);
-// 	sp.addNumber(6);
-// 	sp.addNumber(3);
-// 	sp.addNumber(17);
-// 	sp.addNumber(9);
-// 	sp.addNumber(11);
-// 	std::cout << sp.shortestSpan() << std::endl;
-// 	std::cout << sp.longestSpan() << std::endl;
-// 	return (0);
-// }
+	sp = Span(5);
+	sp.addNumber(6);
+	sp.addNumber(3);
+	sp.addNumber(17);
+	sp.addNumber(9);
+	sp.addNumber(11);
+	std::cout << sp.shortestSpan() << std::endl;
+	std::cout << sp.longestSpan() << std::endl;
+	return (0);
+}
 
 // int	main(int ac, char **av)
 // {

@@ -6,41 +6,44 @@
 /*   By: motroian <motroian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 21:52:15 by motroian          #+#    #+#             */
-/*   Updated: 2023/12/04 18:08:58 by motroian         ###   ########.fr       */
+/*   Updated: 2024/01/19 16:45:20 by motroian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
-
-Dog::Dog(std::string name) : Animal(name)
-{
-	this->_Type = "Dog";
-	std::cout << "Constructor called" << std::endl;
-}
+#include "Brain.hpp"
 
 Dog::Dog() : Animal()
 {
+	this->_brain = new Brain;
 	this->_Type = "Dog";
-	std::cout << "Constructor called" << std::endl;
+	std::cout << "Dog Constructor called" << std::endl;
 }
 
-Dog::Dog(const Dog &rhs)
+Dog::Dog( const Dog &rhs ) : Animal ( rhs )
 {
+	this->_brain = new Brain();
 	*this = rhs;
+	std::cout << "Dog :: Copy Constructor Called\n";
 }
 
-Dog &Dog::operator=(const Dog &rhs)
+Dog	&Dog::operator=( Dog const &rhs )
 {
-	this->_Type = rhs._Type;
-	return (*this);
-};
+	if ( this != &rhs )
+	{
+		this->_Type = rhs._Type;
+		*this->_brain = *rhs._brain;
+	}
+	return *this;
+}
 
 Dog::~Dog()
 {
-	std::cout << "destructor called" << std::endl;
+	std::cout << "Dog destructor called" << std::endl;
+	delete this->_brain;
 }
 
-void Dog::makeSound()const
+void Dog::makeSound() const
 {
-	std::cout << "wafe wafe" << std::endl;
+	std::cout << "meeeeow" << std::endl;
 }

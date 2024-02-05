@@ -6,36 +6,35 @@
 /*   By: motroian <motroian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 20:55:05 by motroian          #+#    #+#             */
-/*   Updated: 2023/12/05 21:11:06 by motroian         ###   ########.fr       */
+/*   Updated: 2024/01/19 18:11:37 by motroian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "WrongCat.hpp"
 
-wrongCat::wrongCat()
+WrongCat::WrongCat() : WrongAnimal()
 {
 	this->_Type = "Default name";
-	std::cout << "wrongCat constructor called" << std::endl;
+	std::cout << "WrongCat constructor called" << std::endl;
 }
 
-wrongCat::wrongCat(std::string name)
-{
-	this->_Type = name;
-	std::cout << "wrongCat constructor called" << std::endl;
-}
-wrongCat::wrongCat(const wrongCat &rhs)
+WrongCat::WrongCat(const WrongCat &rhs) : WrongAnimal()
 {
 	*this = rhs;
 }
 
-wrongCat &wrongCat::operator=(const wrongCat &rhs)
+WrongCat &WrongCat::operator=(const WrongCat &rhs)
 {
 	this->_Type = rhs._Type;
 	return (*this);
-};
+}
 
-
-wrongCat::~wrongCat()
+void WrongCat::makeSound() const
 {
-	std::cout << "wrongCat destructor called" << std::endl;
+	std::cout << "rien." << std::endl;
+}
+
+WrongCat::~WrongCat()
+{
+	std::cout << "WrongCat destructor called" << std::endl;
 }

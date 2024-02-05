@@ -6,7 +6,7 @@
 /*   By: motroian <motroian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 22:11:25 by motroian          #+#    #+#             */
-/*   Updated: 2023/12/12 20:58:33 by motroian         ###   ########.fr       */
+/*   Updated: 2024/01/17 22:56:33 by motroian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ class Ice : public AMateria
 		~Ice();
 		std::string getType()const;
 		void use(ICharacter& target);
-		AMateria* clone() const; 
+		Ice* clone() const; 
 	protected :
 		std::string _Type;
 };

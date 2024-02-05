@@ -6,7 +6,7 @@
 /*   By: motroian <motroian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 16:31:46 by motroian          #+#    #+#             */
-/*   Updated: 2023/12/18 20:38:48 by motroian         ###   ########.fr       */
+/*   Updated: 2023/12/19 18:38:51 by motroian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,19 @@
 #include "AForm.hpp"
 
 
-Robot::Robot() : AForm("RobotmyRequestForm", 72, 45), _target("default_target"){}
+RobotomyRequestForm::RobotomyRequestForm() : AForm("RobotmyRequestForm", 72, 45), _target("default_target"){}
 
-Robot::Robot(std::string target) : AForm("RobotmyRequestForm", 72, 45), _target(target + "_target")
+RobotomyRequestForm::RobotomyRequestForm(std::string target) : AForm("RobotmyRequestForm", 72, 45), _target(target + "_target")
 {
 	_gradeEx = 45;
 }
 
-Robot::Robot(const Robot &rhs)
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &rhs)
 {
 	*this = rhs;
 }
 
-Robot& Robot::operator=(const Robot &rhs)
+RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm &rhs)
 {
 	if (this != &rhs)
 	{
@@ -37,9 +37,9 @@ Robot& Robot::operator=(const Robot &rhs)
 	return (*this);
 }
 
-Robot::~Robot()
+RobotomyRequestForm::~RobotomyRequestForm()
 {}
-void Robot::execute(Bureaucrat const &executor)
+void RobotomyRequestForm::execute(Bureaucrat const &executor)
 {
 	if (executor.getGrade() < this->_gradeEx)
 		throw AForm::GradeTooLowException();

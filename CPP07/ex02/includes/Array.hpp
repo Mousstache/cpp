@@ -6,7 +6,7 @@
 /*   By: motroian <motroian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 22:36:29 by motroian          #+#    #+#             */
-/*   Updated: 2023/12/22 23:28:24 by motroian         ###   ########.fr       */
+/*   Updated: 2023/12/26 20:28:26 by motroian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,34 +20,62 @@
 # include <string>
 #include <cmath>
 
-template <typename T>
 
+template <typename T>
 class Array
 {
 	private :
 		T *_array;
+		unsigned int _size;
 	public :
-		Array(){new _array[0];}
-		Array(unsigned int n){new _array[n];}
-		Array(const Array &rhs){*this = &rhs;}
+		Array(){
+			_size = 10;
+			_array =  new T[_size];
+		}
+		Array(unsigned int n){
+			_size = n;
+			_array = new T[n + 1];
+		}
+		
+		T& operator[] (unsigned int index){
+
+			if (index > _size || index < 0)
+				throw std::out_of_range("Out of bonds"); 
+
+			return _array[index];
+		}
+
+		Array(const Array &rhs)
+		{
+			_size = rhs.size();
+			_array = new T[rhs.size()];
+			std::cout << "Size value : " << rhs.size() << std::endl;
+			for (unsigned int i = 0; i < rhs.size(); i++)
+			{
+				_array[i] = i;
+			}
+		}
+		
+
 		Array &operator= (const Array &rhs)
 		{
 			if (this != &rhs)
-				_array[] = rhs._array[];
+			{
+				_size = rhs.size();
+				_array = new T[rhs.size()];
+				for (unsigned int i = 0; i < rhs.size(); i++)
+				{
+					_array[i] = i;
+				}
+			}
 			return (*this);
 		}
-		~Array(){delete _array[];}
-		size_t size()
+		~Array		(){delete [] _array;}
+		unsigned int size() const
 		{
-			std::cout << _array.size() << std::endl;
-			return ((unsigned int)_array.size());
+			return _size;
 		}
 };
 
-class outofBound: public std::exception
-{
-	public :
-		virtual const char *what() const throw();
-};
 
 #endif

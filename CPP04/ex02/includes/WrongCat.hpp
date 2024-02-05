@@ -6,7 +6,7 @@
 /*   By: motroian <motroian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 17:51:45 by motroian          #+#    #+#             */
-/*   Updated: 2023/12/05 21:07:14 by motroian         ###   ########.fr       */
+/*   Updated: 2024/01/18 21:48:26 by motroian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,18 +18,18 @@
 # include <iostream>
 # include <stdlib.h>
 # include <string>
-# include "Animal.hpp"
+# include "WrongAnimal.hpp"
 
 
-class wrongCat : public Animal
+class WrongCat : public WrongAnimal
 {
 	public :
-		wrongCat();
-		wrongCat(std::string name);
-		wrongCat(const wrongCat &rhs);
-		wrongCat &operator=(const wrongCat &rhs);
-		~wrongCat();
-		// void makeSound();
+		WrongCat();
+		WrongCat(std::string name);
+		WrongCat(const WrongCat &rhs);
+		WrongCat &operator=(const WrongCat &rhs);
+		~WrongCat();
+		void makeSound()const;
 	protected :
 		std::string _Type;
 };

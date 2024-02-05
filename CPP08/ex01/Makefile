@@ -1,4 +1,4 @@
-NAME 		= Whatever
+NAME 		= Span
 
 SRC_FILES	=	srcs/Span.cpp \
 				main.cpp 

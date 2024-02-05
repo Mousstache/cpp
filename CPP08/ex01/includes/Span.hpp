@@ -6,7 +6,7 @@
 /*   By: motroian <motroian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 19:07:03 by mgamil            #+#    #+#             */
-/*   Updated: 2023/12/26 23:55:39 by motroian         ###   ########.fr       */
+/*   Updated: 2024/01/02 20:07:09 by motroian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,12 +40,15 @@ class Span
 {
 	public :
 		Span(unsigned int N);
-		Span( Span  const & src);
-		Span &		operator=( Span const & rhs );
+		Span();
+		Span( Span  const & rhs);
+		Span &operator=( Span const & rhs );
 		~Span();
 		void addNumber(int n);
-		void shortestSpan();
-		void longestSpan();
+		int shortestSpan();
+		int longestSpan();
+		std::vector<int> getSpan()const{return this->_span;};
+		unsigned int getN(){return _N;};
 	private :
 		std::vector<int> _span;
 		unsigned int _N;

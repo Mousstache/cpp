@@ -6,7 +6,7 @@
 /*   By: motroian <motroian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 21:52:22 by motroian          #+#    #+#             */
-/*   Updated: 2023/12/07 18:38:54 by motroian         ###   ########.fr       */
+/*   Updated: 2024/01/18 21:45:51 by motroian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,11 @@ class Dog : public Animal
 {
 	public :
 		Dog();
-		Dog(std::string name);
 		Dog(const Dog &rhs);
 		Dog &operator=(const Dog &rhs);
 		~Dog();
 		void makeSound()const;
 	private :
-		std::string Type;
 		Brain* _brain;
 
 };

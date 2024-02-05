@@ -6,7 +6,7 @@
 /*   By: motroian <motroian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 20:24:32 by motroian          #+#    #+#             */
-/*   Updated: 2023/12/16 22:03:13 by motroian         ###   ########.fr       */
+/*   Updated: 2024/01/22 21:45:14 by motroian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,14 @@
 
 int main ()
 {
-	Bureaucrat kratos("kratos", 2);
-	Bureaucrat kkk("kkk", 150);
-	std::cout << kkk;
+	
 	try
 	{
-		Bureaucrat over("ov", 200);
+	
+	Bureaucrat kratos("kratos", 2);
+	Bureaucrat kk("kk", 150);
+	std::cout << kk;
+		kk.gradeLess();
 	}
 	catch(const std::exception& e)
 	{
@@ -37,7 +39,7 @@ int main ()
 	
 	try
 	{
-		kkk.gradeLess();
+		Bureaucrat over("ov", 200);
 	}
 	catch(const std::exception& e)
 	{

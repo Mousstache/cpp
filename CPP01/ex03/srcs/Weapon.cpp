@@ -6,7 +6,7 @@
 /*   By: motroian <motroian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 22:08:04 by motroian          #+#    #+#             */
-/*   Updated: 2023/12/04 17:20:13 by motroian         ###   ########.fr       */
+/*   Updated: 2024/01/25 23:48:41 by motroian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,4 @@ std::string Weapon::getType()
 	if (this->_type.empty())
 		return ("no type definition !");
 	return (this->_type);
-};
+}

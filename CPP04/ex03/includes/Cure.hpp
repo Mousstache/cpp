@@ -6,7 +6,7 @@
 /*   By: motroian <motroian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 22:11:21 by motroian          #+#    #+#             */
-/*   Updated: 2023/12/12 20:58:47 by motroian         ###   ########.fr       */
+/*   Updated: 2024/01/17 22:56:27 by motroian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ class Cure : public AMateria
 		Cure &operator=(const Cure &rhs);
 		~Cure();
 		void use(ICharacter& target);
-		AMateria* clone()const; 
+		Cure* clone()const; 
 	protected :
 		std::string _Type;
 };

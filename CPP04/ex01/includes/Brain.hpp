@@ -6,7 +6,7 @@
 /*   By: motroian <motroian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 23:10:55 by motroian          #+#    #+#             */
-/*   Updated: 2023/12/07 18:35:54 by motroian         ###   ########.fr       */
+/*   Updated: 2024/01/16 20:35:34 by motroian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,16 +21,15 @@
 # include "Animal.hpp"
 
 
-class Brain : public Animal
+class Brain
 {
 	public :
 		Brain();
-		Brain(std::string name);
 		Brain(const Brain &rhs);
 		Brain &operator=(const Brain &rhs);
 		~Brain();
 	protected :
-		std::string ideas[100];
+		std::string _ideas[100];
 };
 
 #endif

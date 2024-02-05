@@ -6,21 +6,21 @@
 /*   By: motroian <motroian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 22:37:31 by motroian          #+#    #+#             */
-/*   Updated: 2023/12/22 23:18:44 by motroian         ###   ########.fr       */
+/*   Updated: 2023/12/26 20:30:44 by motroian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 // #include "Array.hpp"
 #include <iostream>
-#include <Array.hpp>
+#include "Array.hpp"
 
 #define MAX_VAL 750
 int main(int, char**)
 {
-    Array<int> numbers(MAX_VAL);
-    int* mirror = new int[MAX_VAL];
+    Array<int> numbers(3);
+    int* mirror = new int[3];
     srand(time(NULL));
-    for (int i = 0; i < MAX_VAL; i++)
+    for (int i = 0; i < 3; i++)
     {
         const int value = rand();
         numbers[i] = value;
@@ -32,7 +32,7 @@ int main(int, char**)
         Array<int> test(tmp);
     }
 
-    for (int i = 0; i < MAX_VAL; i++)
+    for (int i = 0; i < 3; i++)
     {
         if (mirror[i] != numbers[i])
         {
@@ -50,14 +50,14 @@ int main(int, char**)
     }
     try
     {
-        numbers[MAX_VAL] = 0;
+        numbers[3] = 0;
     }
     catch(const std::exception& e)
     {
         std::cerr << e.what() << '\n';
     }
 
-    for (int i = 0; i < MAX_VAL; i++)
+    for (int i = 0; i < 3; i++)
     {
         numbers[i] = rand();
     }

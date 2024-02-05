@@ -1,4 +1,4 @@
-NAME 		= Brain
+NAME 		= Abstract
 
 SRC_FILES	=	$(addprefix srcs/, Cat.cpp Dog.cpp Animal.cpp WrongAnimal.cpp WrongCat.cpp Brain.cpp) \
 				main.cpp \
@@ -7,21 +7,21 @@ OBJS_DIR	= .objets
 
 OBJS		= $(SRC_FILES:%.cpp=$(OBJS_DIR)/%.o)
 
-CC			= c++
+CXX		= c++
 
-CFLAGS		= -g3 -std=c++98 -Wall -Wextra -Werror -Iincludes
+CXXFLAGS		= -g3 -std=c++98 -Wall -Wextra -Werror -Iincludes
 
 all : $(NAME)
 
 $(NAME) : $(OBJS_DIR) $(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
 	
 $(OBJS_DIR) :
 	@mkdir $(OBJS_DIR)
 	@mkdir $(OBJS_DIR)/srcs
 
 $(OBJS) : $(OBJS_DIR)/%.o : %.cpp
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean :
 	rm -rf $(OBJS_DIR)

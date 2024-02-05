@@ -6,7 +6,7 @@
 /*   By: motroian <motroian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 21:47:11 by motroian          #+#    #+#             */
-/*   Updated: 2023/12/04 19:14:41 by motroian         ###   ########.fr       */
+/*   Updated: 2024/01/16 19:59:01 by motroian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,10 @@
 
 Animal::Animal()
 {
-	this->_Type = "Default name";
+	this->_Type = "Animal";
 	std::cout << "Animal constructor called" << std::endl;
 }
 
-Animal::Animal(std::string name)
-{
-	this->_Type = name;
-	std::cout << "Animal constructor called" << std::endl;
-}
 Animal::Animal(const Animal &rhs)
 {
 	*this = rhs;
@@ -30,10 +25,10 @@ Animal::Animal(const Animal &rhs)
 
 Animal &Animal::operator=(const Animal &rhs)
 {
-	this->_Type = rhs._Type;
+	if (this != &rhs)
+		this->_Type = rhs._Type;
 	return (*this);
-};
-
+}
 
 Animal::~Animal()
 {

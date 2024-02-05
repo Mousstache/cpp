@@ -1,4 +1,4 @@
-NAME 		= Whatever
+NAME 		= Mutant
 
 SRC_FILES	=	main.cpp 
 

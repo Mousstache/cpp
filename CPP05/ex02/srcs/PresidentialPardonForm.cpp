@@ -6,7 +6,7 @@
 /*   By: motroian <motroian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 23:50:25 by motroian          #+#    #+#             */
-/*   Updated: 2023/12/18 20:27:51 by motroian         ###   ########.fr       */
+/*   Updated: 2023/12/19 18:42:02 by motroian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,21 @@
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
 
-Presidential::Presidential() : AForm("PresidentialPardonForm", 25, 5), _target("default_target")
+PresidentialPardonForm::PresidentialPardonForm() : AForm("PresidentialPardonForm", 25, 5), _target("default_target")
 {
 }
 
-Presidential::Presidential(std::string target): AForm("PresidentialPardonForm", 25, 5), _target(target + "_target")
+PresidentialPardonForm::PresidentialPardonForm(std::string target): AForm("PresidentialPardonForm", 25, 5), _target(target + "_target")
 {
 	this->_gradeEx = 5;
 }
 
-Presidential::Presidential(const Presidential &rhs)
+PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &rhs)
 {
 	*this = rhs;
 }
 
-Presidential& Presidential::operator=(const Presidential &rhs)
+PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentialPardonForm &rhs)
 {
 	if (this != &rhs)
 	{
@@ -38,10 +38,10 @@ Presidential& Presidential::operator=(const Presidential &rhs)
 	return (*this);
 }
 
-Presidential::~Presidential()
+PresidentialPardonForm::~PresidentialPardonForm()
 {}
 
-void Presidential::execute(Bureaucrat const &executor)
+void PresidentialPardonForm::execute(Bureaucrat const &executor)
 {
 	if (executor.getGrade() < this->_gradeEx)
 		throw AForm::GradeTooLowException();

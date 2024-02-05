@@ -6,11 +6,11 @@
 /*   By: motroian <motroian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 22:12:00 by motroian          #+#    #+#             */
-/*   Updated: 2023/12/14 23:57:44 by motroian         ###   ########.fr       */
+/*   Updated: 2024/01/17 22:25:43 by motroian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AMateria.hpp"
+#include "../includes/AMateria.hpp"
 
 AMateria::AMateria()
 {

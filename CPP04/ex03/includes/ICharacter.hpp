@@ -6,7 +6,7 @@
 /*   By: motroian <motroian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 19:27:49 by motroian          #+#    #+#             */
-/*   Updated: 2023/12/14 23:01:00 by motroian         ###   ########.fr       */
+/*   Updated: 2024/01/19 17:18:11 by motroian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,6 @@ class ICharacter
 		virtual void equip(AMateria* m) = 0;
 		virtual void unequip(int idx) = 0;
 		virtual void use(int idx, ICharacter& target) = 0;
-	protected :
-		std::string _Type;
 };
 
 #endif

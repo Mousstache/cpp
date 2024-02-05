@@ -6,11 +6,11 @@
 /*   By: motroian <motroian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/12 20:05:14 by motroian          #+#    #+#             */
-/*   Updated: 2023/12/14 23:58:05 by motroian         ###   ########.fr       */
+/*   Updated: 2024/01/17 22:26:26 by motroian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "MateriaSource.hpp"
+#include "../includes/MateriaSource.hpp"
 
 MateriaSource::MateriaSource() : _nbMateria(0)
 {

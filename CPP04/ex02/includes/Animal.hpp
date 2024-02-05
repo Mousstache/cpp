@@ -6,7 +6,7 @@
 /*   By: motroian <motroian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 21:47:32 by motroian          #+#    #+#             */
-/*   Updated: 2023/12/08 21:39:55 by motroian         ###   ########.fr       */
+/*   Updated: 2024/01/16 21:34:12 by motroian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ class Animal
 		Animal &operator=(const Animal &rhs);
 		virtual ~Animal();
 		std::string getType()const;
-		virtual void makeSound()const = 0; 
+		virtual void makeSound()const = 0;
 	protected :
 		std::string _Type;
 };

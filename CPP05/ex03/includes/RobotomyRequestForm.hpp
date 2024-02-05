@@ -6,12 +6,12 @@
 /*   By: motroian <motroian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 23:32:06 by motroian          #+#    #+#             */
-/*   Updated: 2023/12/18 20:35:33 by motroian         ###   ########.fr       */
+/*   Updated: 2023/12/19 18:38:42 by motroian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FORM_HPP
-# define FORM_HPP
+#ifndef ROBOTOMYREQUESTFORM_HPP
+# define ROBOTOMYREQUESTFORM_HPP
 
 # include <fstream>
 # include <iomanip>
@@ -25,14 +25,14 @@
 class Bureaucrat;
 class AForm;
 
-class Robot : public AForm
+class RobotomyRequestForm : public AForm
 {
 	public :
-		Robot();
-		Robot(std::string name);
-		Robot(const Robot &rhs);
-		Robot &operator=(const Robot &rhs);
-		~Robot();
+		RobotomyRequestForm();
+		RobotomyRequestForm(std::string name);
+		RobotomyRequestForm(const RobotomyRequestForm &rhs);
+		RobotomyRequestForm &operator=(const RobotomyRequestForm &rhs);
+		~RobotomyRequestForm();
 		int getGradeEx();
 		std::string getName();
 		void execute(Bureaucrat const &executor);

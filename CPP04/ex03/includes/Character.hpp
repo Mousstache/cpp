@@ -6,7 +6,7 @@
 /*   By: motroian <motroian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 22:11:17 by motroian          #+#    #+#             */
-/*   Updated: 2023/12/14 22:59:56 by motroian         ###   ########.fr       */
+/*   Updated: 2024/01/19 17:23:38 by motroian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ class Character : public ICharacter
 		void use(int idx, ICharacter& target);
 	protected :
 		AMateria* _item[4];
+		AMateria* _bin[4];
 		std::string _name;
 };
 
