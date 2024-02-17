@@ -6,7 +6,7 @@
 /*   By: motroian <motroian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 21:08:01 by motroian          #+#    #+#             */
-/*   Updated: 2023/12/21 22:14:08 by motroian         ###   ########.fr       */
+/*   Updated: 2024/02/17 20:31:08 by motroian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class B : public Base
 {
 	public:
 		B(){};
-		~B(){};
+		virtual ~B(){};
 };
 
 #endif

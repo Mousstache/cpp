@@ -6,7 +6,7 @@
 /*   By: motroian <motroian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 21:28:39 by motroian          #+#    #+#             */
-/*   Updated: 2024/01/30 20:23:37 by motroian         ###   ########.fr       */
+/*   Updated: 2024/02/17 20:28:05 by motroian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,21 +24,18 @@
 
 struct Data
 {
-	int value;
-    Data(int v) : value(v) {}
+	int age;
+	std::string name;
 };
 
 class Serializer
 {
 	public :
-		Serializer();
-		// Serializer(std::string name, int grade, int gradeEx);
-		// Serializer(const Serializer &rhs);
-		// Serializer &operator=(const Serializer &rhs);
 		~Serializer();
 		static uintptr_t serialize(Data* ptr);
-		Data* deserialize(uintptr_t raw);
+		static Data* deserialize(uintptr_t raw);
 	private :
+		Serializer();
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: motroian <motroian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 21:28:36 by motroian          #+#    #+#             */
-/*   Updated: 2023/12/21 20:46:58 by motroian         ###   ########.fr       */
+/*   Updated: 2024/02/17 19:01:41 by motroian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 
 Serializer::Serializer(){}
-// Serializer(const Serializer &rhs){*this = rhs;}
-// Serializer &operator=(const Serializer &rhs){return (*this);}
 Serializer::~Serializer(){}
 
 uintptr_t Serializer::serialize(Data* ptr)
