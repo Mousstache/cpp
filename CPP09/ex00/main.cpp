@@ -6,7 +6,7 @@
 /*   By: motroian <motroian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 18:04:16 by motroian          #+#    #+#             */
-/*   Updated: 2024/02/29 23:19:25 by motroian         ###   ########.fr       */
+/*   Updated: 2024/03/01 00:03:48 by motroian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,20 +15,14 @@
 void parsing(std::string line)
 {
 	std::cout << "ligne : " << line << std::endl;
-	std::stringstream ss;
+	std::istringstream ss(line);
 	float valeur;
     std::string string;
 
-
-	ss << line;
+	std::getline(ss, string, '|');
 	ss >> valeur;
-
-	if (std::getline(ss, string, '|')) 
-	{
-		std::cout << "line_lue :" << string << std::endl;
-		std::cout <<  << std::endl;
-    }
-	std::cout << valeur << std::endl;
+	// std::cout << "line_lue :" << string << std::endl;
+	// std::cout << "valeur :" << valeur << std::endl;
 	if (valeur < 0 || valeur > 1000)
 	{
 		std::cout << "WWEEEESSSSSSSHHHHH"<<  std::endl;
