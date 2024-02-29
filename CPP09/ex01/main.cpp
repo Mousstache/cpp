@@ -6,7 +6,7 @@
 /*   By: motroian <motroian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 19:10:51 by motroian          #+#    #+#             */
-/*   Updated: 2024/02/26 00:08:39 by motroian         ###   ########.fr       */
+/*   Updated: 2024/02/29 20:10:35 by motroian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,21 +32,15 @@ int calculate(std::string operation)
 				std::cout << "number2: " << nb1 << std::endl;
 				int result;
 				if (token == "-")
-				{
 					result = nb1 - nb2;
-				}
 				else if (token == "+")
-				{
 					result = nb1 + nb2;
-				}
 				else if (token == "/")
 				{
 					result = nb1 / nb2;
 				}
 				else if (token == "*")
-				{
 					result = nb1 * nb2;
-				}
 				stack.push(result);
 			}
 		}
