@@ -6,28 +6,62 @@
 /*   By: motroian <motroian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 18:04:16 by motroian          #+#    #+#             */
-/*   Updated: 2024/03/01 00:03:48 by motroian         ###   ########.fr       */
+/*   Updated: 2024/03/02 06:46:11 by motroian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "BitcoinExchange.hpp"
 
-void parsing(std::string line)
+void find_data(std::map<std::string, float>& myMap, std::string line)
 {
-	std::cout << "ligne : " << line << std::endl;
+	// std::map<std::string, float>::iterator it;
+	std::map<std::string, float>::iterator it = myMap.find(line);
+	if (it != myMap.end()) {
+        std::cout << "La valeur associée à la clé " << line << " est : " << it->second << std::endl;
+    } else {
+        std::cout << "La clé " << line << " n'a pas été trouvée dans la map." << std::endl;
+    }
+}
+
+void parsing(std::map<std::string, float>myMap, std::string line)
+{
+	// std::cout << "ligne : " << line << std::endl;
 	std::istringstream ss(line);
 	float valeur;
     std::string string;
 
 	std::getline(ss, string, '|');
 	ss >> valeur;
+	int year = atoi(string.substr(0, 4).c_str());
+    int month = atoi(string.substr(5, 7).c_str());
+    int day = atoi(string.substr(8, 10).c_str());
+
+	if (year > 2022 || year < 2009)
+	{
+		std::cout << "year non valid" << std::endl;
+		return ;
+	}
+	if (month < 1 || month > 12)
+	{
+		std::cout << "month non valid" << std::endl;
+		return ;
+	}
+	if (day < 1 || day > 31)
+	{
+		std::cout << "day non valid" << std::endl;
+		return;
+	}
 	// std::cout << "line_lue :" << string << std::endl;
 	// std::cout << "valeur :" << valeur << std::endl;
 	if (valeur < 0 || valeur > 1000)
 	{
-		std::cout << "WWEEEESSSSSSSHHHHH"<<  std::endl;
+		std::cout << "wrong btc" <<  std::endl;
+		return ;
 	}
-	
+	std::cout << "year: " << year << " month: " << month << " day: " << day << std::endl;
+	std::string dateFormatee = string.substr(0, 10); // Garder uniquement la date (sans l'heure)
+
+	find_data(myMap, dateFormatee);
 }
 
 void stock_data(const std::string& nomFichier, std::map<std::string, float>& myMap) {
@@ -80,13 +114,6 @@ void stock_data(const std::string& nomFichier, std::map<std::string, float>& myM
 //         std::cerr << "Erreur lors de l'ouverture du fichier." << std::endl;
 // }
 
-void find_data(std::map<std::string, float>& myMap)
-{
-	std::map<std::string, float>::iterator it;
-	for (it = myMap.begin(); it != myMap.end();it++)
-	{
-	}
-}
 
 
 int main (int ac, char **av)
@@ -122,7 +149,7 @@ int main (int ac, char **av)
    		std::ifstream fichier(input.c_str());
         while (std::getline(fichier, ligne))
 		{
-			parsing(ligne);
+			parsing(myMap, ligne);
             std::istringstream stream(ligne);
             
             float cle;
