@@ -6,7 +6,7 @@
 /*   By: motroian <motroian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 19:10:51 by motroian          #+#    #+#             */
-/*   Updated: 2024/02/29 20:10:35 by motroian         ###   ########.fr       */
+/*   Updated: 2024/03/03 20:09:52 by motroian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ int calculate(std::string operation)
 	std::stack<int> stack;
 		std::stringstream ss(operation);
 		std::string token;
+
+		
 		while (ss >> token)
 		{
 			if (isdigit(token[0]))
@@ -26,10 +28,8 @@ int calculate(std::string operation)
 			{
 				int nb2 = stack.top();
 				stack.pop();
-				std::cout << "number1: " << nb2 << std::endl;
 				int nb1 = stack.top();
 				stack.pop();
-				std::cout << "number2: " << nb1 << std::endl;
 				int result;
 				if (token == "-")
 					result = nb1 - nb2;
@@ -37,6 +37,11 @@ int calculate(std::string operation)
 					result = nb1 + nb2;
 				else if (token == "/")
 				{
+					if (nb1 == 0 || nb2 == 0)
+					{
+						std::cout << "impossible division" << std::endl;
+						exit(0);
+					}
 					result = nb1 / nb2;
 				}
 				else if (token == "*")

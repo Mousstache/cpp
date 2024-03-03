@@ -6,26 +6,36 @@
 /*   By: motroian <motroian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 18:04:16 by motroian          #+#    #+#             */
-/*   Updated: 2024/03/02 06:46:11 by motroian         ###   ########.fr       */
+/*   Updated: 2024/03/03 19:58:44 by motroian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "BitcoinExchange.hpp"
 
-void find_data(std::map<std::string, float>& myMap, std::string line)
+void find_data(std::map<std::string, float>& myMap, std::string line, float value)
 {
-	// std::map<std::string, float>::iterator it;
+	(void)value;
 	std::map<std::string, float>::iterator it = myMap.find(line);
-	if (it != myMap.end()) {
-        std::cout << "La valeur associée à la clé " << line << " est : " << it->second << std::endl;
-    } else {
-        std::cout << "La clé " << line << " n'a pas été trouvée dans la map." << std::endl;
+	std::map<std::string, float>::iterator it_test = myMap.find(line);
+	if (it != myMap.end())
+	{
+        std::cout << it->first << " => " << value << " = ";
+		value = value * it->second;
+		std::cout << value << std::endl;
+    } 
+	else 
+	{
+		it = myMap.lower_bound(line);
+		it--;
+		it_test = it;
+       	std::cout << it->first << " => " << value << " = ";
+		value = value * it->second;
+		std::cout << value << std::endl;
     }
 }
 
 void parsing(std::map<std::string, float>myMap, std::string line)
 {
-	// std::cout << "ligne : " << line << std::endl;
 	std::istringstream ss(line);
 	float valeur;
     std::string string;
@@ -38,39 +48,38 @@ void parsing(std::map<std::string, float>myMap, std::string line)
 
 	if (year > 2022 || year < 2009)
 	{
-		std::cout << "year non valid" << std::endl;
+		std::cout << "Error: bad input" << " => " << string << std::endl;
 		return ;
 	}
 	if (month < 1 || month > 12)
 	{
-		std::cout << "month non valid" << std::endl;
+		std::cout << "Error: bad input" << " => " << string << std::endl;
 		return ;
 	}
 	if (day < 1 || day > 31)
 	{
-		std::cout << "day non valid" << std::endl;
+		std::cout << "Error: bad input" << " => " << string << std::endl;
 		return;
 	}
-	// std::cout << "line_lue :" << string << std::endl;
-	// std::cout << "valeur :" << valeur << std::endl;
 	if (valeur < 0 || valeur > 1000)
 	{
-		std::cout << "wrong btc" <<  std::endl;
+		if (valeur < 0)
+			std::cout << "Error: not a positive number." << std::endl;
+		else
+			std::cout << "Error: too large a number." <<  std::endl;
 		return ;
 	}
-	std::cout << "year: " << year << " month: " << month << " day: " << day << std::endl;
-	std::string dateFormatee = string.substr(0, 10); // Garder uniquement la date (sans l'heure)
-
-	find_data(myMap, dateFormatee);
+	std::string dateFormatee = string.substr(0, 10);
+	find_data(myMap, dateFormatee, valeur);
 }
 
-void stock_data(const std::string& nomFichier, std::map<std::string, float>& myMap) {
+void stock_data(const std::string& nomFichier, std::map<std::string, float>& myMap)
+{
     std::ifstream fichier(nomFichier.c_str());
 
     if (fichier) 
 	{ 
         std::string ligne;
-        
         while (std::getline(fichier, ligne))
 		{
             std::istringstream stream(ligne);
@@ -89,42 +98,14 @@ void stock_data(const std::string& nomFichier, std::map<std::string, float>& myM
         std::cerr << "Erreur lors de l'ouverture du fichier." << std::endl;
 }
 
-// void stock_input(const std::string& nomFichier, std::map<std::string, float>& myMap) {
-//     std::ifstream fichier(nomFichier.c_str());
-
-//     if (fichier) 
-// 	{ 
-//         std::string ligne;
-        
-//         while (std::getline(fichier, ligne))
-// 		{
-//             std::istringstream stream(ligne);
-            
-//             float cle;
-//             std::string valeur;
-//             if (std::getline(stream, valeur, '|'))
-// 			{
-//                 stream >> cle;
-//                 myMap[valeur] = cle;
-//             }
-//         }
-//         fichier.close();
-//     } 
-// 	else 
-//         std::cerr << "Erreur lors de l'ouverture du fichier." << std::endl;
-// }
-
-
-
 int main (int ac, char **av)
 {
-	if (ac == 3)
+	if (ac == 2)
 	{
 		std::map<std::string, float> myMap;
-		// std::map<std::string, float> myMap2;
 		std::map<std::string, float>::iterator it;
 
-		std::string filename =  av[1];
+		std::string filename =  "data.csv";
 		std::ifstream file(filename.c_str());
 		if (!file.is_open())
 		{
@@ -132,20 +113,17 @@ int main (int ac, char **av)
         	return 1;
    		}
 		std::string line;
-    	std::cout << "Contenu du fichier " << filename << ":" << std::endl;
-		stock_data(av[1],myMap);
-		// parsing(myMap);
+		stock_data("data.csv",myMap);
 
-		std::string file_read =  av[2];
+		std::string file_read =  av[1];
 		std::ifstream file1(file_read.c_str());
 		if (!file1.is_open())
 		{
         	std::cout << "Impossible d'ouvrir le fichier " << file_read << std::endl;
         	return 1;
    		}
-		// stock_input(av[2], myMap2);
 		std::string ligne;
-		std::string input =  av[2];
+		std::string input =  av[1];
    		std::ifstream fichier(input.c_str());
         while (std::getline(fichier, ligne))
 		{
@@ -162,14 +140,6 @@ int main (int ac, char **av)
         }
         fichier.close();
     	file1.close();
-
-		// for (it = myMap.begin(); it != myMap.end(); ++it) {
-        // std::cout << "Clé : " << it->first << ", Valeur : " << it->second << std::endl;
-    	// }
-		// std::cout << std::endl;
-		// for (it = myMap2.begin(); it != myMap2.end(); ++it) {
-        // std::cout << "Clé : " << it->first << ", Valeur : " << it->second << std::endl;
-    	// }
 	}
 	else
 		std::cout << "Wrong args" << std::endl;
