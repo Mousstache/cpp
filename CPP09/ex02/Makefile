@@ -1,4 +1,4 @@
-NAME 		= EasyFind
+NAME 		= PmergeMe
 
 SRC_FILES	=	main.cpp 
 

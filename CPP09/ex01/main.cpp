@@ -6,7 +6,7 @@
 /*   By: motroian <motroian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 19:10:51 by motroian          #+#    #+#             */
-/*   Updated: 2024/03/03 20:09:52 by motroian         ###   ########.fr       */
+/*   Updated: 2024/03/04 18:26:01 by motroian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,10 @@ int calculate(std::string operation)
 		{
 			if (isdigit(token[0]))
 				stack.push(atoi(token.c_str()));
+			else if (token != "+" && token != "-" && token != "*" && token != "/")
+				exit(0);
+			else if (stack.size() <= 1)
+				exit(0);
 			else
 			{
 				int nb2 = stack.top();
