@@ -1,6 +1,7 @@
 NAME 		= Btc
 
-SRC_FILES	=	main.cpp 
+SRC_FILES	=	srcs/BitcoinExchange.cpp \
+				main.cpp 
 
 OBJS_DIR	= .objets
 

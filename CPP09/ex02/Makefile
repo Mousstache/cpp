@@ -1,6 +1,7 @@
 NAME 		= PmergeMe
 
-SRC_FILES	=	main.cpp 
+SRC_FILES	=	srcs/PmergeMe.cpp \
+				main.cpp 
 
 OBJS_DIR	= .objets
 
