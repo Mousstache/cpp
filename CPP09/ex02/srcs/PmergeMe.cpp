@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PmergeMe.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: motroian <motroian@student.42.fr>          +#+  +:+       +#+        */
+/*   By: moussa <moussa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 18:15:23 by motroian          #+#    #+#             */
-/*   Updated: 2024/03/10 00:34:06 by motroian         ###   ########.fr       */
+/*   Updated: 2024/03/11 17:45:09 by moussa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,14 @@ void	PmergeMe::parsing(char **input, int n)
 	for (int i = 1; i < n;i++)
 	{
 		if (std::atol(input[i]) > INT_MAX || std::atol(input[i]) < INT_MIN)
-			throw std::invalid_argument("Error: Wrong number");
+			throw std::invalid_argument("Error: Wrong Number");
 		if (isdigit(std::atol(input[i])))
-			throw std::invalid_argument("Error: Wrong number");
+			throw std::invalid_argument("Error: Wrong Number");
+		for (int j = i + 1;j < n;j++)
+		{
+			if (std::atol(input[i]) == std::atol(input[j]))
+				throw std::invalid_argument("Error: Double Number");
+		}
 	}
 }
 
@@ -81,6 +86,6 @@ void	PmergeMe::begin(char **av, int ac)
 	for (it = vector.begin();it != vector.end(); ++it)
 		std::cout << *it << " ";
 	std::cout << std::endl;
-	std::cout << "Time to process a range of " << vector.size() << " elements with std::vector : " << vec_time_end << " us" << std::endl;
-	std::cout << "Time to process a range of " << deque.size() << " elements with std::deque : " << deq_time_end << " us" << std::endl;
+	std::cout << "Time to process a range of " << vector.size() << " elements with std::vector : " << vec_time_end - vec_time_begin << " us" << std::endl;
+	std::cout << "Time to process a range of " << deque.size() << " elements with std::deque : " << deq_time_end - deq_time_begin << " us" << std::endl;
 }
